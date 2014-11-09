@@ -67,9 +67,9 @@ bintray {
         name = 'gradle-react-plugin'
         licenses = ['Apache-2.0']
         desc = 'Gradle plugin for compiling jsx sources to javascript. '
-//        websiteUrl = 'https://github.com/srs/gradle-grunt-plugin'
-//        issueTrackerUrl = 'https://github.com/srs/gradle-grunt-plugin/issues'
-//        vcsUrl = 'https://github.com/srs/gradle-grunt-plugin.git'
+        websiteUrl = 'https://github.com/ehirsch/gradle-react-plugin'
+        issueTrackerUrl = 'https://github.com/ehirsch/gradle-react-plugin/issues'
+        vcsUrl = 'https://github.com/ehirsch/gradle-react-plugin.git'
         labels = ['java', 'gradle', 'groovy', 'node', 'react', 'jsx']
         publicDownloadNumbers = true
     }
