@@ -11,6 +11,7 @@ buildscript {
 apply plugin: 'groovy'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'java-gradle-plugin'
 
 version = '0.1'
 group = 'net.eikehirsch.react'
@@ -27,6 +28,7 @@ repositories {
 dependencies {
     compile gradleApi()
     compile 'com.moowork.gradle:gradle-node-plugin:0.7'
+    testCompile 'junit:junit:4.11'
 }
 
 task sourcesJar( type: Jar ) {
