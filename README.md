@@ -7,7 +7,7 @@ This is a very simple Gradle plugin to compile JSX sources into JavaScript. It w
 Status
 ------
 
-* Build: [![Build Status](https://travis-ci.org/ehirsch/gradle-react-plugin.svg)][3]
+* Build: [![Build Status](https://travis-ci.org/ehirsch/gradle-react-plugin.svg?branch=master)][3]
 * Download: [![Download](todo)][4]
 * License: [![License](http://img.shields.io/:license-apache-blue.svg)][5]
 
