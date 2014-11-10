@@ -57,6 +57,6 @@ To build the plugin, just type the following command:
 
 [1]: https://github.com/srs/gradle-node-plugin "gradle-node-plugin"
 [2]: https://github.com/srs "Stens' GitHup page"
-[3]: https://travis-ci.org/ehirsch/gradle-react-plugin
+[3]: https://travis-ci.org/ehirsch/gradle-react-plugin "build status on travis-ci"
 [4]: todo
-[5]: http://www.apache.org/licenses/LICENSE-2.0.html
+[5]: http://www.apache.org/licenses/LICENSE-2.0.html "Apache License v2.0"
