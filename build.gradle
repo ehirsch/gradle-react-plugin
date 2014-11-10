@@ -32,6 +32,9 @@ dependencies {
     compile gradleApi()
     compile 'com.moowork.gradle:gradle-node-plugin:0.7'
     testCompile 'junit:junit:4.11'
+    testCompile( 'org.spockframework:spock-core:0.7-groovy-2.0' ) {
+        exclude module: 'groovy-all'
+    }
 }
 
 task sourcesJar( type: Jar ) {

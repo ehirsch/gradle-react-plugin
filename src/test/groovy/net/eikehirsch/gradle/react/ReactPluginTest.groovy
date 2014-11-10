@@ -6,6 +6,7 @@ import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Before
 import org.junit.Test
 
+import static org.hamcrest.CoreMatchers.equalTo
 import static org.hamcrest.CoreMatchers.instanceOf
 import static org.hamcrest.CoreMatchers.not
 import static org.junit.Assert.assertThat
@@ -43,6 +44,13 @@ class ReactPluginTest {
     assertThat(project.tasks.jsx, not(null))
     assertThat(project.tasks.jsx, instanceOf(JSXTask) )
   }
+
+  @Test
+  void addsJSXTaskTypeToExtraProps() {
+    assertTrue(project.extensions.extraProperties.has(JSXTask.simpleName))
+    assertThat(project.extensions.extraProperties.get(JSXTask.simpleName) as Class<JSXTask>, equalTo(JSXTask.class))
+  }
+
 
 
 }
