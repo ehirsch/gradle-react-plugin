@@ -9,7 +9,7 @@ class JSXTask extends NodeTask {
 
     public JSXTask() {
         this.group = 'React'
-        this.description = ''
+        this.description = 'Compiles jsx sources into javascript. Configure via jsx extension.'
     }
 
     // TODO: inputs & outputs
