@@ -2,7 +2,13 @@ Gradle plugin for React
 =======================
 
 This is a very simple Gradle plugin to compile JSX sources into JavaScript. It was inspired by and is using the
-[gradle-node-plugin][1] from [Sten Roger Sandvik][2]
+[gradle-node-plugin][1] from [Sten Roger Sandvik][2].
+
+[React][6] is
+
+> A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES
+
+developed at Facebook and Instagram.
 
 Status
 ------
@@ -62,3 +68,4 @@ To build the plugin, just type the following command:
 [3]: https://travis-ci.org/ehirsch/gradle-react-plugin "build status on travis-ci"
 [4]: todo
 [5]: http://www.apache.org/licenses/LICENSE-2.0.html "Apache License v2.0"
+[6]: http://facebook.github.io/react/index.html "React homepage"
