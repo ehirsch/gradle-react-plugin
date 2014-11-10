@@ -9,10 +9,11 @@ class ReactTask
     private final static String JSX_SCRIPT = 'node_modules/react-tools/bin/jsx';
 
     public ReactTask() {
-        this.group = 'Grunt';
+        this.group = 'React';
     }
 
     // TODO: inputs & outputs
+    // TODO: options
 
     @Override
     void exec() {
@@ -20,7 +21,7 @@ class ReactTask
         if (!jsx.isFile() )
         {
             throw new GradleException(
-                "React-Tools not installed in node_modules, please run 'gradle ${GruntPlugin.GRUNT_INSTALL_NAME}' first." )
+                "React-Tools not installed in node_modules, please run 'gradle ${ReactPlugin.REACT_INSTALL_NAME}' first." )
         }
 
         setScript( jsx )

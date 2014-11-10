@@ -12,7 +12,8 @@ apply plugin: 'groovy'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
-group = 'net.eikehirsch.gradle'
+version = '0.1'
+group = 'net.eikehirsch.react'
 
 def compatibilityVersion = 1.7
 sourceCompatibility = compatibilityVersion
@@ -60,7 +61,7 @@ bintray {
     publications = ['mavenJava']
     publish = true
 
-    dryrun = true
+    dryRun = true
 
     pkg {
         repo = 'maven'

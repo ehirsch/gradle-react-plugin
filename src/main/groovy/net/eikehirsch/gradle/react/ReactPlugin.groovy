@@ -11,9 +11,13 @@ class ReactPlugin
 
     @Override
     void apply(final Project project) {
+        // we need the node plugin to run and install the react-tools.
         project.plugins.apply(NodePlugin.class)
+        project.tasks.create(REACT_INSTALL_NAME, ReactInstallTask.class )
 
         project.extensions.extraProperties.set('ReactTask', ReactTask.class)
-        project.tasks.create(REACT_INSTALL_NAME, ReactInstallTask.class )
+
+
+
     }
 }
