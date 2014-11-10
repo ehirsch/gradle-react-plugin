@@ -54,7 +54,6 @@ To build the plugin, just type the following command:
     ./gradlew clean build
 
 
-Links
 
 [1]: https://github.com/srs/gradle-node-plugin "gradle-node-plugin"
 [2]: https://github.com/srs "Stens' GitHup page"
