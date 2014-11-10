@@ -13,6 +13,9 @@ apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'java-gradle-plugin'
 
+// TODO: use the gradle-plugindev-plugin
+// TODO: switch to new plugin mechanism
+
 version = '0.1'
 group = 'net.eikehirsch.react'
 
