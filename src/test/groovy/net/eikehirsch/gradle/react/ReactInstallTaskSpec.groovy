@@ -46,7 +46,10 @@ class ReactInstallTaskSpec extends Specification {
 	// applying the plugin will create the task.
 	project.apply plugin: 'net.eikehirsch.react'
 
+
 	then:
+	project.tasks.installReact.outputs.hasOutput
+	project.tasks.installReact.outputs.files.contains(project.file(ReactInstallTask.INSTALL_DIR))
 	project.file(ReactInstallTask.INSTALL_DIR).exists();
   }
 
