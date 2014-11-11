@@ -5,6 +5,9 @@ import com.moowork.gradle.node.task.NpmTask
 class ReactInstallTask
     extends NpmTask
 {
+
+    public static final String INSTALL_DIR = 'node_modules/react-tools'
+
     public ReactInstallTask()
     {
         super()
@@ -14,7 +17,7 @@ class ReactInstallTask
 
         setArgs( ['install', 'react-tools'] )
 
-        def installDir = this.project.file 'node_modules/react-tools'
+        def installDir = this.project.file INSTALL_DIR
         if( !installDir.exists() ) {
             installDir.mkdirs();
         }
