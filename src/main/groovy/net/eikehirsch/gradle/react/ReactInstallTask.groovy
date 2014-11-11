@@ -2,14 +2,11 @@ package net.eikehirsch.gradle.react
 
 import com.moowork.gradle.node.task.NpmTask
 
-class ReactInstallTask
-    extends NpmTask
-{
+class ReactInstallTask extends NpmTask {
 
     public static final String INSTALL_DIR = 'node_modules/react-tools'
 
-    public ReactInstallTask()
-    {
+    public ReactInstallTask() {
         super()
 
         this.group = 'React'
