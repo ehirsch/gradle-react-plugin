@@ -33,3 +33,6 @@ atlassian-ide-plugin.xml
 
 .gradle
 build
+examples/simple/.gradle
+examples/simple/node_modules
+examples/simple/build

@@ -14,6 +14,11 @@ class ReactInstallTask
 
         setArgs( ['install', 'react-tools'] )
 
-        getOutputs().dir( 'node_modules/react-tools' )
+        def installDir = this.project.file 'node_modules/react-tools'
+        if( !installDir.exists() ) {
+            installDir.mkdirs();
+        }
+
+        getOutputs().dir(installDir)
     }
 }

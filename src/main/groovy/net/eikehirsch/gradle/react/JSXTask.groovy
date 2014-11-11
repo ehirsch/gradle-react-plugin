@@ -10,10 +10,12 @@ class JSXTask extends NodeTask {
     public JSXTask() {
         this.group = 'React'
         this.description = 'Compiles jsx sources into javascript. Configure via jsx extension.'
+        this.dependsOn 'installReact'
     }
 
     // TODO: inputs & outputs
     // TODO: options
+    // TODO: clean up
 
     @Override
     void exec() {
@@ -25,6 +27,7 @@ class JSXTask extends NodeTask {
                         "${ReactPlugin.REACT_INSTALL_TASK_NAME}' first." )
         }
         setScript( jsx )
+        setArgs(["src/main/react", "build/"])
         super.exec()
     }
 }

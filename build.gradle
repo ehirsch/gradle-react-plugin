@@ -16,7 +16,7 @@ apply plugin: 'java-gradle-plugin'
 // TODO: use the gradle-plugindev-plugin
 // TODO: switch to new plugin mechanism
 
-version = '0.1'
+version = '0.1-SNAPSHOT'
 group = 'net.eikehirsch.react'
 
 def compatibilityVersion = 1.7

@@ -1,0 +1,26 @@
+// the < 2.1 way to apply the plugin
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath  'net.eikehirsch.react:gradle-react-plugin:0.1-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.eikehirsch.react'
+
+// the >= 2.1 way to apply the plugin
+//plugins {
+//    id 'net.eikehirsch.react' version '0.1'
+//}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+task wrapper( type: Wrapper) {
+    gradleVersion = '2.2'
+}
