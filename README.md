@@ -1,7 +1,7 @@
 Gradle plugin for React
 =======================
 
-This is a very simple Gradle plugin to compile JSX sources into JavaScript. It was inspired by and is using the
+This is a very simple Gradle plugin to transform JSX sources into JavaScript. It was inspired by and is using the
 [gradle-node-plugin][1] from [Sten Roger Sandvik][2].
 
 [React][6] is
