@@ -27,9 +27,6 @@ class ReactPlugin implements Plugin<Project> {
         project.tasks.create(JSX_TASK_NAME, JSXTask.class)
         // adding the task to the extra properties makes it available as task type in this project.
         addGlobalTaskType(JSXTask.class)
-
-        // TODO: extension for configuration.
-        // TODO: jsx dependsOn installReact
     }
 
     private void addGlobalTaskType( Class type ) {

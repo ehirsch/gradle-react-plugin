@@ -3,11 +3,7 @@ package net.eikehirsch.gradle.react
 import org.gradle.testfixtures.ProjectBuilder
 import spock.lang.Specification
 
-/**
- * @author Eike Hirsch
- * Date: 11.11.14
- * Time: 14:16
- */
+
 class ReactInstallTaskSpec extends Specification {
 
   def "creating task sets group and description"() {

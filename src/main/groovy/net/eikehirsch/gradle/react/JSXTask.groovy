@@ -1,11 +1,19 @@
 package net.eikehirsch.gradle.react
-
 import com.moowork.gradle.node.task.NodeTask
 import org.gradle.api.GradleException
+import org.gradle.api.tasks.InputDirectory
+import org.gradle.api.tasks.OutputDirectory
 
 class JSXTask extends NodeTask {
 
     private final static String JSX_SCRIPT = 'node_modules/react-tools/bin/jsx';
+
+    @InputDirectory
+    def sourcesDir = 'src/main/react'
+
+    @OutputDirectory
+    def destDir = 'build/react'
+
 
     public JSXTask() {
         this.group = 'React'
@@ -13,21 +21,32 @@ class JSXTask extends NodeTask {
         this.dependsOn 'installReact'
     }
 
-    // TODO: inputs & outputs
-    // TODO: options
-    // TODO: clean up
 
     @Override
     void exec() {
         def jsx = this.project.file(JSX_SCRIPT)
-        if (!jsx.isFile() )
-        {
+        if (!jsx.isFile()) {
             throw new GradleException(
-                "React-Tools not installed in node_modules, please run 'gradle " +
+                    "React-Tools not installed in node_modules, please run 'gradle " +
                         "${ReactPlugin.REACT_INSTALL_TASK_NAME}' first." )
         }
         setScript( jsx )
-        setArgs(["src/main/react", "build/"])
+
+        // make sure the output folder exists
+        def out = getDestDir();
+        if( out.exists() ) {
+            out.mkdirs()
+        }
+        setArgs([getSourcesDir().absolutePath, out.absolutePath])
         super.exec()
     }
+
+    def getSourcesDir() {
+        return project.file(sourcesDir)
+    }
+
+    def getDestDir() {
+        return project.file(destDir)
+    }
+
 }
