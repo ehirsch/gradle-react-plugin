@@ -12,7 +12,7 @@ Only some notes about what i think might be useful.
 - **Example with harmony** -
   Simply to show of some of the config options in action
 
-- **Explain usage for gradle <2.1 and >=2.1** -
+- **Explain usage for gradle before and since 2.1** -
   This should become a new paragraph in README.md
 
 - **Release/deploy** -
