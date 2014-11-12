@@ -45,12 +45,18 @@ The plugin will also apply gradle-node-plugin for Node and NPM related tasks. (s
 Using the plugin
 ----------------
 
-TODO
+Simply run
+```sh
+./gradlew jsx
+```
+to transform any js file in `src/main/react`. The resulting files will be stored at `build/react`.
 
-Extended Usage
---------------
+### Include jsx into with the build
 
-TODO
+If you want to have your jsx sources transformed everytime you build your project, you could do something like this:
+```groovy
+processResources.dependsOn jsx
+```
 
 Building the Plugin
 -------------------
