@@ -1,35 +1,13 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.5'
-    }
+plugins {
+    id 'groovy'
+    id 'nu.studer.plugindev' version '1.0.3'
 }
 
-apply plugin: 'groovy'
-apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'java-gradle-plugin'
-
-// TODO: use the gradle-plugindev-plugin
-// TODO: switch to new plugin mechanism
-
-version = '0.1-SNAPSHOT'
+version = '0.1'
 group = 'net.eikehirsch.react'
 
-def compatibilityVersion = 1.7
-sourceCompatibility = compatibilityVersion
-targetCompatibility = compatibilityVersion
-
-repositories {
-    jcenter()
-    mavenCentral()
-}
-
 dependencies {
-    compile gradleApi()
+//    compile gradleApi() // added by the plugindev-plugin
     compile 'com.moowork.gradle:gradle-node-plugin:0.7'
     testCompile 'junit:junit:4.11'
     testCompile( 'org.spockframework:spock-core:0.7-groovy-2.0' ) {
@@ -37,51 +15,23 @@ dependencies {
     }
 }
 
-task sourcesJar( type: Jar ) {
-    classifier 'sources'
-    from sourceSets.main.allSource
-}
-
-task groovydocJar( type: Jar ) {
-    classifier 'javadoc'
-    from groovydoc
-}
-
-artifacts {
-    archives sourcesJar
-    archives groovydocJar
-}
-
-publishing {
-    publications {
-        mavenJava( MavenPublication ) {
-            from components.java
-            artifact sourcesJar
-            artifact groovydocJar
-        }
-    }
+plugindev {
+    pluginImplementationClass 'net.eikehirsch.gradle.react.ReactPlugin'
+    pluginDescription 'A simple plugin to use the react-tools to transform jsx to javascript using gradle.'
+    pluginLicenses 'Apache-2.0'
+    pluginTags 'gradle', 'plugin', 'react', 'jsx', 'javascript', 'node'
+    authorId 'ehirsch'
+    authorName 'Eike Hirsch'
+    authorEmail 'me@eike-hirsch.net'
+    projectUrl 'https://github.com/ehirsch/gradle-react-plugin'
+    projectInceptionYear '2014'
+    done() // do not omit this
 }
 
 bintray {
     user = project.hasProperty( 'bintrayUser' ) ? project.getProperty( 'bintrayUser' ) : null
     key = project.hasProperty( 'bintrayAPIKey' ) ? project.getProperty( 'bintrayAPIKey' ) : null
-
-    publications = ['mavenJava']
-    publish = true
-
-    dryRun = true
-
-    pkg {
-        repo = 'maven'
-        name = 'gradle-react-plugin'
-        licenses = ['Apache-2.0']
-        desc = 'Gradle plugin for compiling jsx sources to javascript. '
-        websiteUrl = 'https://github.com/ehirsch/gradle-react-plugin'
-        issueTrackerUrl = 'https://github.com/ehirsch/gradle-react-plugin/issues'
-        vcsUrl = 'https://github.com/ehirsch/gradle-react-plugin.git'
-        labels = ['java', 'gradle', 'groovy', 'node', 'react', 'jsx']
-        publicDownloadNumbers = true
-    }
+    pkg.repo = 'maven'
 }
 
 
