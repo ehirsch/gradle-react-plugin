@@ -14,7 +14,7 @@ Status
 ------
 
 * Build: [![Build Status](https://travis-ci.org/ehirsch/gradle-react-plugin.svg?branch=master)][3]
-* Download: [![Download](todo)][4]
+* Download: [![Download](https://api.bintray.com/packages/ehirsch/maven/gradle-react-plugin/images/download.svg)][4]
 * License: [![License](http://img.shields.io/:license-apache-blue.svg)][5]
 
 Installing the plugin
@@ -72,6 +72,6 @@ To build the plugin, just type the following command:
 [1]: https://github.com/srs/gradle-node-plugin "gradle-node-plugin"
 [2]: https://github.com/srs "Stens' GitHup page"
 [3]: https://travis-ci.org/ehirsch/gradle-react-plugin "build status on travis-ci"
-[4]: todo
+[4]: https://bintray.com/ehirsch/maven/gradle-react-plugin/_latestVersion "download latest version"
 [5]: http://www.apache.org/licenses/LICENSE-2.0.html "Apache License v2.0"
 [6]: http://facebook.github.io/react/index.html "React homepage"
