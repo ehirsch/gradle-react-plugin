@@ -51,7 +51,7 @@ Simply run
 ```
 to transform any js file in `src/main/react`. The resulting files will be stored at `build/react`.
 
-### Include jsx into with the build
+### Include jsx with the build
 
 If you want to have your jsx sources transformed everytime you build your project, you could do something like this:
 ```groovy
