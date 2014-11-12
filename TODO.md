@@ -24,8 +24,8 @@ Only some notes about what i think might be useful.
 - **Clean up** -
   I don't remove any build artifacts - no good.
 
-- **Compile -> transform** -
-  I wrote some comments about jsx compiling things - that not quite correct. Change this into *transfrom*
+- ~~**Compile -> transform** -
+  I wrote some comments about jsx compiling things - that not quite correct. Change this into *transfrom*~~
 
 - **Create a convention** -
   There is this concept of convetions in gradle - will have to look into that…
