@@ -20,6 +20,17 @@ developed at Facebook and Instagram.
 Releases of this plugin are hosted at BinTray (http://bintray.com) and is part of jcenter repository.
 Setup the plugin like this:
 
+
+### Gradle versions since 2.1
+
+```groovy
+plugins {
+    id 'net.eikehirsch.react' version '0.1'
+}
+```
+
+### Gradle versions below 2.1
+
 ```groovy
 buildscript {
 	repositories {
@@ -29,11 +40,7 @@ buildscript {
 		classpath 'net.eikehirsch.react:gradle-react-plugin:0.1'
 	}
 }
-```
 
-Include the plugin in your build.gradle file like this:
-
-```groovy
 apply plugin: 'net.eikehirsch.react'
 ```
 
