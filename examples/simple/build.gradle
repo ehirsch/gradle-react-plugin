@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath  'net.eikehirsch.react:gradle-react-plugin:0.1-SNAPSHOT'
+        classpath  'net.eikehirsch.react:gradle-react-plugin:0.2-SNAPSHOT'
     }
 }
 
