@@ -1,5 +1,4 @@
-Gradle plugin for React
-=======================
+# Gradle plugin for React
 
 This is a very simple Gradle plugin to transform JSX sources into JavaScript. It was inspired by and is using the
 [gradle-node-plugin][1] from [Sten Roger Sandvik][2].
@@ -10,15 +9,13 @@ This is a very simple Gradle plugin to transform JSX sources into JavaScript. It
 
 developed at Facebook and Instagram.
 
-Status
-------
+## Status
 
 * Build: [![Build Status](https://travis-ci.org/ehirsch/gradle-react-plugin.svg?branch=master)][3]
 * Download: [![Download](https://api.bintray.com/packages/ehirsch/maven/gradle-react-plugin/images/download.svg)][4]
 * License: [![License](http://img.shields.io/:license-apache-blue.svg)][5]
 
-Installing the plugin
----------------------
+## Installing the plugin
 
 Releases of this plugin are hosted at BinTray (http://bintray.com) and is part of jcenter repository.
 Setup the plugin like this:
@@ -42,8 +39,7 @@ apply plugin: 'net.eikehirsch.react'
 
 The plugin will also apply gradle-node-plugin for Node and NPM related tasks. (see [http://github/srs/gradle-node-plugin][1] for details).
 
-Using the plugin
-----------------
+## Using the plugin
 
 Simply run
 ```sh
@@ -58,14 +54,18 @@ If you want to have your jsx sources transformed everytime you build your projec
 processResources.dependsOn jsx
 ```
 
-Building the Plugin
--------------------
+## Building the Plugin
 
 To build the plugin, just type the following command:
 
 ```sh
 ./gradlew clean build
 ```
+
+## Acknowledgments
+
+* Thanks to [Sten R. Sandvik][2] for his [node plugin][1]
+* that's all for now.
 
 
 
