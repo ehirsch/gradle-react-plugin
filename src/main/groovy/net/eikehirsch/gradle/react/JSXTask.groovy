@@ -6,13 +6,17 @@ import org.gradle.api.tasks.OutputDirectory
 
 class JSXTask extends NodeTask {
 
+    public static final String NAME = 'jsx';
+    public static final String DEFAULT_SOURCES_DIR = 'src/main/react'
+    public static final String DEFAULT_DEST_DIR    = 'build/react'
+
     private final static String JSX_SCRIPT = 'node_modules/react-tools/bin/jsx';
 
     @InputDirectory
-    def sourcesDir = 'src/main/react'
+    def sourcesDir
 
     @OutputDirectory
-    def destDir = 'build/react'
+    def destDir
 
 
     public JSXTask() {
@@ -21,6 +25,12 @@ class JSXTask extends NodeTask {
         this.dependsOn 'installReact'
     }
 
+    // updating will happen when the project was evaluated.
+    def updateSettings() {
+        JSXExtension config = project.extensions.getByName(JSXExtension.NAME)
+        sourcesDir = config.sourcesDir ? config.sourcesDir : DEFAULT_SOURCES_DIR;
+        destDir = config.destDir ? config.destDir : DEFAULT_DEST_DIR;
+    }
 
     @Override
     void exec() {
@@ -28,7 +38,7 @@ class JSXTask extends NodeTask {
         if (!jsx.isFile()) {
             throw new GradleException(
                     "React-Tools not installed in node_modules, please run 'gradle " +
-                        "${ReactPlugin.REACT_INSTALL_TASK_NAME}' first." )
+                            "${ReactInstallTask.NAME}' first.")
         }
         setScript( jsx )
 

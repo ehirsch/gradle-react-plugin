@@ -49,14 +49,39 @@ The plugin will also apply gradle-node-plugin for Node and NPM related tasks. (s
 ## Using the plugin
 
 Simply run
+
 ```sh
 ./gradlew jsx
 ```
 to transform any js file in `src/main/react`. The resulting files will be stored at `build/react`.
 
+### Configure the plugin
+
+To change the defaults you can put all your settings into the `jsx` namespace:
+
+```groovy
+jsx {
+  sourcesDir = 'src/react'
+  destDir    = 'out'
+}
+```
+
+### Create your own jsx task
+
+You can define the input and output folders without using the extension namespace like this:
+
+```groovy
+task myJSX( type: JSXTask ) {
+    sourcesDir = 'src/react'
+    destDir = 'out'
+}
+```
+(You can try this at the configuration example project)
+
 ### Include jsx with the build
 
 If you want to have your jsx sources transformed everytime you build your project, you could do something like this:
+
 ```groovy
 processResources.dependsOn jsx
 ```

@@ -41,4 +41,16 @@ class ReactPluginSpec extends Specification {
     project.plugins.hasPlugin(NodePlugin.class)
   }
 
+  def "applying the plugin add the extension to the project"() {
+    given:
+    def project = ProjectBuilder.builder().build()
+
+    when:
+    project.apply plugin: 'net.eikehirsch.react'
+
+    then:
+    null != project.extensions.findByName('jsx')
+    null != project.extensions.findByType(JSXExtension.class)
+  }
+
 }

@@ -43,8 +43,7 @@ class JSXTaskSpec extends Specification {
 
   def "works if react was installed"() {
 	given: "the plugin is applied and react was installed"
-	project.apply plugin: 'net.eikehirsch.react'
-	project.tasks.installReact.exec()
+	validProjectSetup()
 
 	when:
 	project.tasks.jsx.exec()
@@ -56,6 +55,7 @@ class JSXTaskSpec extends Specification {
   def "uses default input and output locations"() {
 	given: "a valid project setup"
 	validProjectSetup()
+	createInputFile('src/main/react')
 	def output = project.file('build/react')
 
 	when:
@@ -66,13 +66,60 @@ class JSXTaskSpec extends Specification {
 	output.exists()
   }
 
+  def "input and output locations get configured via extension"() {
+	given: "a valid project setup"
+	project.with {
+	   apply plugin: 'net.eikehirsch.react'
+	   jsx {
+		 sourcesDir = 'src/react'
+		 destDir = 'out'
+	   }
+	}
+
+	when:
+	project.evaluate()
+
+	then:
+	project.tasks.jsx.sourcesDir == project.file('src/react')
+	project.tasks.jsx.destDir == project.file('out')
+  }
+
+  def "configurations in task definitions take precedence over extension"() {
+	given: "a valid project setup"
+	project.with {
+	  apply plugin: 'net.eikehirsch.react'
+
+	  jsx {
+		sourcesDir = 'src/react'
+		destDir = 'out'
+	  }
+
+	  task([type:JSXTask],'myJSX') {
+		sourcesDir = 'src/react2'
+		destDir = 'out2'
+	  }
+	}
+
+	when:
+	project.evaluate()
+
+	then:
+	project.tasks.myJSX.sourcesDir == project.file('src/react2')
+	project.tasks.myJSX.destDir == project.file('out2')
+  }
+
 
   private void validProjectSetup() {
 	project.apply plugin: 'net.eikehirsch.react'
+	project.evaluate()
 	project.tasks.installReact.exec()
-	def inputDir = project.file('src/main/react')
-	inputDir.mkdirs();
-	def input = new File(inputDir, 'test.js')
+  }
+
+
+  private void createInputFile(String inputDir) {
+	def dir = project.file(inputDir)
+	dir.mkdirs();
+	def input = new File(dir, 'test.js')
 	input.createNewFile()
   }
 

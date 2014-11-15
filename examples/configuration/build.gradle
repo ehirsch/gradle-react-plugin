@@ -1,0 +1,36 @@
+// the < 2.1 way to apply the plugin
+buildscript {
+    repositories {
+        mavenLocal() // using the local maven repo for easy testing locally.
+        jcenter()
+    }
+    dependencies {
+        classpath  'net.eikehirsch.react:gradle-react-plugin:0.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.eikehirsch.react'
+
+//the >= 2.1 way to apply the plugin
+//plugins {
+//    id 'net.eikehirsch.react' version '0.1'
+//}
+
+// configuring the plugin
+jsx {
+    sourcesDir = 'src/react'
+    destDir = 'out'
+}
+
+
+/*
+ * Creating a personalized JSXTask without the need to use the jsx-extension namespace.
+ */
+task myJSX( type: JSXTask ) {
+    sourcesDir = 'src/react2'
+    destDir = 'out2'
+}
+
+task wrapper( type: Wrapper) {
+    gradleVersion = '2.2'
+}

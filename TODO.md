@@ -23,17 +23,16 @@ Only some notes about what i think might be useful.
 
 ## doing
 
-- **Configure inputs and output.** -
-  Right now the sources and their transformations have to be located at exactly one directory. This has to change.
-
-
 ## done
+
+- ~~**Configure inputs and output.** -
+  Right now the sources and their transformations have to be located at exactly one directory. This has to change.~~
 
 - ~~**Release/deploy** -
   I never released anything to bintray or plugins.gradle.org. Curious how this might work.~~
 
 - ~~**Compile -> transform** -
-  I wrote some comments about jsx compiling things - that not quite correct. Change this into *transfrom*~~
+  I wrote some comments about jsx *compiling* things - that's not quite correct. Change this into *transfrom*~~
 
 
 ## Related

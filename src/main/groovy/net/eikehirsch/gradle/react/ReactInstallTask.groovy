@@ -4,6 +4,7 @@ import com.moowork.gradle.node.task.NpmTask
 
 class ReactInstallTask extends NpmTask {
 
+    public static final String        NAME = "installReact"
     public static final String INSTALL_DIR = 'node_modules/react-tools'
 
     public ReactInstallTask() {
