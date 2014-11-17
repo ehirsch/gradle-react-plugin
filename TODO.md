@@ -12,9 +12,6 @@ Only some notes about what i think might be useful.
 - **Explain usage for gradle before and since 2.1** -
   This should become a new paragraph in README.md
 
-- **A more gradle-ish version** -
-  right now the version is simply hardcoded - we can do better than that ;)
-
 - **Clean up** -
   I don't remove any build artifacts - no good.
 
@@ -22,6 +19,9 @@ Only some notes about what i think might be useful.
   There is this concept of convetions in gradle - will have to look into that…
 
 ## doing
+
+- **A more gradle-ish version** -
+  right now the version is simply hardcoded - we can do better than that ;)
 
 ## done
 
