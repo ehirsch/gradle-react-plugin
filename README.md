@@ -1,5 +1,7 @@
 # Gradle plugin for React
 
+[![Build Status](https://travis-ci.org/ehirsch/gradle-react-plugin.svg?branch=master)][3] [![Download](https://api.bintray.com/packages/ehirsch/maven/gradle-react-plugin/images/download.svg)][4] [![License](http://img.shields.io/:license-apache-blue.svg)][5]
+
 This is a very simple Gradle plugin to transform JSX sources into JavaScript. It was inspired by and is using the
 [gradle-node-plugin][1] from [Sten Roger Sandvik][2].
 
@@ -8,12 +10,6 @@ This is a very simple Gradle plugin to transform JSX sources into JavaScript. It
 > A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES
 
 developed at Facebook and Instagram.
-
-## Status
-
-* Build: [![Build Status](https://travis-ci.org/ehirsch/gradle-react-plugin.svg?branch=master)][3]
-* Download: [![Download](https://api.bintray.com/packages/ehirsch/maven/gradle-react-plugin/images/download.svg)][4]
-* License: [![License](http://img.shields.io/:license-apache-blue.svg)][5]
 
 ## Installing the plugin
 
