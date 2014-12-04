@@ -3,9 +3,6 @@
 Only some notes about what i think might be useful.
 (for me to learn and/or the project to become better)
 
-- **More configurations** -
-  It should be possible to provide all the options which are understood by the jsx transpiler
-
 - **Example with harmony** -
   Simply to show of some of the config options in action
 
@@ -20,8 +17,8 @@ Only some notes about what i think might be useful.
 
 ## doing
 
-- **A more gradle-ish version** -
-  right now the version is simply hardcoded - we can do better than that ;)
+- **More configurations** -
+  It should be possible to provide all the options which are understood by the jsx transpiler
 
 ## done
 
@@ -33,6 +30,9 @@ Only some notes about what i think might be useful.
 
 - ~~**Compile -> transform** -
   I wrote some comments about jsx *compiling* things - that's not quite correct. Change this into *transfrom*~~
+
+- ~~**A more gradle-ish version** -
+  right now the version is simply hardcoded - we can do better than that ;)~~
 
 
 ## Related
