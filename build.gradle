@@ -1,9 +1,17 @@
 plugins {
     id 'groovy'
     id 'nu.studer.plugindev' version '1.0.3'
+    id "pl.allegro.tech.build.axion-release" version "0.9.9"
+}
+// configure version
+scmVersion {
+    tag {
+        prefix = 'v'
+        versionSeparator = ''
+    }
 }
 
-version = '0.2'
+version = scmVersion.version
 group = 'net.eikehirsch.react'
 
 dependencies {
