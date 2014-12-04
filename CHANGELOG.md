@@ -1,10 +1,15 @@
 Changelog
 =========
 
-Version 0.3 *(not released)*
+Version 0.4 *(not released)*
 ----------------------------
 
 * ...
+
+Version 0.3 *(not released)*
+----------------------------
+
+* A more gradle-ish version
 
 Version 0.2 *(2014-11-15)*
 ----------------------------
