@@ -6,7 +6,7 @@ Version 0.4 *(not released)*
 
 * ...
 
-Version 0.3 *(not released)*
+Version 0.3 *(2014-12-04)*
 ----------------------------
 
 * A more gradle-ish version
