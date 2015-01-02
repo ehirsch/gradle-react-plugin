@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath  'net.eikehirsch.react:gradle-react-plugin:0.2'
+        classpath  'net.eikehirsch.react:gradle-react-plugin:0.3.0'
     }
 }
 
@@ -13,10 +13,11 @@ apply plugin: 'net.eikehirsch.react'
 
 //the >= 2.1 way to apply the plugin
 //plugins {
-//    id 'net.eikehirsch.react' version '0.2'
+//    id 'net.eikehirsch.react' version '0.3.0'
 //}
 
 // configuring the plugin
+// Notice the destination directory!
 jsx {
     sourcesDir = 'src/react'
     destDir = 'out'
@@ -26,6 +27,7 @@ jsx {
 /*
  * Creating a personalized JSXTask without the need to use the jsx-extension namespace.
  */
+// Notice the destination directory!
 task myJSX( type: JSXTask ) {
     sourcesDir = 'src/react2'
     destDir = 'out2'

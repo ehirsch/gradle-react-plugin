@@ -5,7 +5,7 @@
 //        jcenter()
 //    }
 //    dependencies {
-//        classpath  'net.eikehirsch.react:gradle-react-plugin:0.2'
+//        classpath  'net.eikehirsch.react:gradle-react-plugin:0.3.0'
 //    }
 //}
 //
@@ -13,7 +13,7 @@
 
 //the >= 2.1 way to apply the plugin
 plugins {
-    id 'net.eikehirsch.react' version '0.2'
+    id 'net.eikehirsch.react' version '0.3.0'
 }
 
 repositories {
