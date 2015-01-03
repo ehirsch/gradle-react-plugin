@@ -3,37 +3,8 @@
 Only some notes about what i think might be useful.
 (for me to learn and/or the project to become better)
 
-- **Example with harmony** -
-  Simply to show of some of the config options in action
-
-- **Explain usage for gradle before and since 2.1** -
-  This should become a new paragraph in README.md
-
-- **Clean up** -
-  I don't remove any build artifacts - no good.
-
 - **Create a convention** -
-  There is this concept of convetions in gradle - will have to look into that…
-
-## doing
-
-- **More configurations** -
-  It should be possible to provide all the options which are understood by the jsx transpiler
-
-## done
-
-- ~~**Configure inputs and output.** -
-  Right now the sources and their transformations have to be located at exactly one directory. This has to change.~~
-
-- ~~**Release/deploy** -
-  I never released anything to bintray or plugins.gradle.org. Curious how this might work.~~
-
-- ~~**Compile -> transform** -
-  I wrote some comments about jsx *compiling* things - that's not quite correct. Change this into *transfrom*~~
-
-- ~~**A more gradle-ish version** -
-  right now the version is simply hardcoded - we can do better than that ;)~~
-
+  There is this concept of conventions in gradle - will have to look into that…
 
 ## Related
 
