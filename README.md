@@ -21,7 +21,7 @@ Setup the plugin like this:
 
 ```groovy
 plugins {
-    id 'net.eikehirsch.react' version '0.3.0'
+    id 'net.eikehirsch.react' version '0.3.1'
 }
 ```
 
@@ -33,7 +33,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath 'net.eikehirsch.react:gradle-react-plugin:0.3.0'
+		classpath 'net.eikehirsch.react:gradle-react-plugin:0.3.1'
 	}
 }
 
