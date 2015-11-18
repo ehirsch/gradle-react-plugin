@@ -48,10 +48,6 @@ Simply run
 
 ```sh
 ./gradlew jsx
-
-# for older gradle (e.g. 1.4) versions use:
-
-./gradelw 'jsx'
 ```
 to transform any js file in `src/main/react`. The resulting files will be stored at `build/react`.
 
@@ -84,6 +80,9 @@ If you want to have your jsx sources transformed everytime you build your projec
 
 ```groovy
 processResources.dependsOn jsx
+
+// for older gradle versions (e.g. 1.4) use:
+processResources.dependsOn 'jsx'
 ```
 
 ## Building the Plugin
