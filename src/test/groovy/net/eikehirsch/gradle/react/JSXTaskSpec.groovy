@@ -109,6 +109,29 @@ class JSXTaskSpec extends Specification {
   }
 
 
+  def "can use options"() {
+	given: "a valid project setup"
+	project.with {
+	  apply plugin: 'net.eikehirsch.react'
+
+	  jsx {
+		  sourcesDir = 'src/react'
+		  destDir = 'out'
+		  extension = 'jsx'
+	  }
+	}
+
+	when:
+	project.evaluate()
+
+	then:
+		JSXTask task = project.tasks.jsx
+		task.sourcesDir == project.file('src/react')
+		task.destDir == project.file('out')
+		task.options.extension == 'jsx'
+  }
+
+
   private void validProjectSetup() {
 	project.apply plugin: 'net.eikehirsch.react'
 	project.evaluate()
