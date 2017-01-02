@@ -7,6 +7,7 @@ plugins {
 jsx {
     sourcesDir = 'src/react'
     destDir = 'out'
+	
 }
 
 
@@ -17,6 +18,7 @@ jsx {
 task myJSX( type: JSXTask ) {
     sourcesDir = 'src/react2'
     destDir = 'out2'
+	extension = 'jsx'
 }
 
 task wrapper( type: Wrapper) {

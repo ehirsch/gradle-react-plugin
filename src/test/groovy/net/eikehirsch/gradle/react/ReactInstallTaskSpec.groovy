@@ -46,7 +46,7 @@ class ReactInstallTaskSpec extends Specification {
 	then:
 	project.tasks.installReact.outputs.hasOutput
 	project.tasks.installReact.outputs.files.contains(project.file(ReactInstallTask.INSTALL_DIR))
-	project.file(ReactInstallTask.INSTALL_DIR).exists();
+	project.file(ReactInstallTask.INSTALL_DIR).exists()
   }
 
 

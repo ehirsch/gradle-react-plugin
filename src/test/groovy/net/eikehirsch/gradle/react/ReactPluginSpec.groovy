@@ -41,7 +41,7 @@ class ReactPluginSpec extends Specification {
     project.plugins.hasPlugin(NodePlugin.class)
   }
 
-  def "applying the plugin add the extension to the project"() {
+  def "applying the plugin adds the extension to the project"() {
     given:
     def project = ProjectBuilder.builder().build()
 

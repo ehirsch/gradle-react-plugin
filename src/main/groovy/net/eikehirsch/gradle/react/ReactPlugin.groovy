@@ -9,11 +9,11 @@ import org.gradle.api.Project
  */
 class ReactPlugin implements Plugin<Project> {
 
-    Project project;
+    Project project
 
     @Override
     void apply(final Project project) {
-        this.project = project;
+        this.project = project
 
         // We need the node plugin to run and install the react-tools.
         project.plugins.apply(NodePlugin.class)
@@ -30,7 +30,7 @@ class ReactPlugin implements Plugin<Project> {
         project.extensions.create(JSXExtension.NAME, JSXExtension.class)
         // when the project was evaluated and before any task is running we are able to configure the tasks
         project.afterEvaluate {
-            project.tasks.getByName(JSXTask.NAME).updateSettings()
+	        ((JSXTask)project.tasks.getByName(JSXTask.NAME)).updateSettings()
         }
 
     }
