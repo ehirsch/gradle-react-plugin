@@ -4,6 +4,7 @@ import com.moowork.gradle.node.task.NodeTask
 import org.gradle.api.GradleException
 import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.OutputDirectory
+import org.gradle.util.ConfigureUtil
 
 class JSXTask extends NodeTask {
 
@@ -17,7 +18,7 @@ class JSXTask extends NodeTask {
 
     @OutputDirectory destDir
 	
-	JSXOptions options
+	JSXOptions options = new JSXOptions()
 	
 	
 	JSXTask() {
@@ -31,7 +32,7 @@ class JSXTask extends NodeTask {
         JSXExtension config = project.extensions.getByName(JSXExtension.NAME) as JSXExtension
         sourcesDir = config.sourcesDir ?: DEFAULT_SOURCES_DIR
         destDir = config.destDir ?: DEFAULT_DEST_DIR
-	    options = config.options
+	    options = config.getOptions() ?: options
     }
 
     @Override
@@ -54,6 +55,7 @@ class JSXTask extends NodeTask {
 	    args << getSourcesDir().absolutePath
 	    args << out.absolutePath
         setArgs args
+	    
         super.exec()
     }
 
@@ -64,5 +66,12 @@ class JSXTask extends NodeTask {
     def getDestDir() {
         return project.file(destDir)
     }
-
+	
+	@SuppressWarnings("GroovyUnusedDeclaration")
+	options(Closure<JSXOptions> optionsClosure) {
+		ConfigureUtil.configure(optionsClosure, options)
+		return this
+	}
+	
+	
 }

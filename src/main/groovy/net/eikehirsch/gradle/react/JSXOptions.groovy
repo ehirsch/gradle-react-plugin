@@ -8,7 +8,8 @@ class JSXOptions {
 		def args = []
 		
 		if(extension) {
-			args << "--extension $extension"
+			args << "--extension"
+			args << extension
 		}
 		
 		return args

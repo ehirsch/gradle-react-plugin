@@ -1,13 +1,23 @@
-plugins {
-    id 'net.eikehirsch.react' version '0.3.1'
+buildscript {
+	repositories {
+		mavenLocal()
+		jcenter()
+	}
+	dependencies {
+		classpath 'net.eikehirsch.react:gradle-react-plugin:0.4.1-SNAPSHOT'
+	}
 }
+
+apply plugin: 'net.eikehirsch.react'
 
 // configuring the plugin
 // Notice the destination directory!
 jsx {
-    sourcesDir = 'src/react'
+    sourcesDir = 'src/jsx'
     destDir = 'out'
-	
+	options {
+		extension = 'jsx'
+	}
 }
 
 
@@ -16,9 +26,8 @@ jsx {
  */
 // Notice the destination directory!
 task myJSX( type: JSXTask ) {
-    sourcesDir = 'src/react2'
+    sourcesDir = 'src/react'
     destDir = 'out2'
-	extension = 'jsx'
 }
 
 task wrapper( type: Wrapper) {
