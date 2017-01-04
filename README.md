@@ -21,7 +21,7 @@ Setup the plugin like this:
 
 ```groovy
 plugins {
-    id 'net.eikehirsch.react' version '0.3.1'
+    id 'net.eikehirsch.react' version '0.4.1'
 }
 ```
 
@@ -33,7 +33,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath 'net.eikehirsch.react:gradle-react-plugin:0.3.1'
+		classpath 'net.eikehirsch.react:gradle-react-plugin:0.4.1'
 	}
 }
 
@@ -59,6 +59,10 @@ To change the defaults you can put all your settings into the `jsx` namespace:
 jsx {
   sourcesDir = 'src/react'
   destDir    = 'out'
+  // optional
+  options {
+    extension = 'jsx' // js is the default extension
+  }
 }
 ```
 
@@ -70,6 +74,10 @@ You can define the input and output folders without using the extension namespac
 task myJSX( type: JSXTask ) {
     sourcesDir = 'src/react'
     destDir = 'out'
+    // optional
+    options {
+        extension = 'js' // js is the default extension
+    }
 }
 ```
 (You can try this at the configuration example project)
