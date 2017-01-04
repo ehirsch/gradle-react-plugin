@@ -117,7 +117,9 @@ class JSXTaskSpec extends Specification {
 	  jsx {
 		  sourcesDir = 'src/react'
 		  destDir = 'out'
-		  extension = 'jsx'
+		  options {
+			  extension = 'jsx'
+		  }
 	  }
 	}
 
