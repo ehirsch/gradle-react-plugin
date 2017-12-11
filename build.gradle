@@ -16,7 +16,7 @@ group = 'net.eikehirsch.react'
 
 dependencies {
 //    compile gradleApi() // added by the plugindev-plugin
-    compile 'com.moowork.gradle:gradle-node-plugin:0.9'
+    compile 'com.moowork.gradle:gradle-node-plugin:1.1.0'
     testCompile 'junit:junit:4.11'
     testCompile( 'org.spockframework:spock-core:0.7-groovy-2.0' ) {
         exclude module: 'groovy-all'

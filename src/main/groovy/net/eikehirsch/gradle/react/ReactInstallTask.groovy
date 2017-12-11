@@ -1,6 +1,6 @@
 package net.eikehirsch.gradle.react
 
-import com.moowork.gradle.node.task.NpmTask
+import com.moowork.gradle.node.npm.NpmTask
 
 class ReactInstallTask extends NpmTask {
 
