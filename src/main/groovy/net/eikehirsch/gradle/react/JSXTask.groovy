@@ -18,8 +18,8 @@ class JSXTask extends NodeTask {
 
     @OutputDirectory destDir
 	
-	JSXOptions options = new JSXOptions()
-	
+    JSXOptions jsxOptions = new JSXOptions()
+
 	
 	JSXTask() {
         this.group = 'React'
@@ -32,7 +32,7 @@ class JSXTask extends NodeTask {
         JSXExtension config = project.extensions.getByName(JSXExtension.NAME) as JSXExtension
         sourcesDir = config.sourcesDir ?: DEFAULT_SOURCES_DIR
         destDir = config.destDir ?: DEFAULT_DEST_DIR
-	    options = config.getOptions() ?: options
+        jsxOptions = config.getOptions() ?: jsxOptions
     }
 
     @Override
@@ -51,7 +51,7 @@ class JSXTask extends NodeTask {
             out.mkdirs()
         }
 	    
-	    def args = options.toArgsArray()
+	    def args = jsxOptions.toArgsArray()
 	    args << getSourcesDir().absolutePath
 	    args << out.absolutePath
         setArgs args
@@ -68,8 +68,8 @@ class JSXTask extends NodeTask {
     }
 	
 	@SuppressWarnings("GroovyUnusedDeclaration")
-	options(Closure<JSXOptions> optionsClosure) {
-		ConfigureUtil.configure(optionsClosure, options)
+    jsxOptions(Closure<JSXOptions> optionsClosure) {
+		ConfigureUtil.configure(optionsClosure, jsxOptions)
 		return this
 	}
 	

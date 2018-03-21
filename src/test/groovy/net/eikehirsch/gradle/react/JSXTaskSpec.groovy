@@ -130,7 +130,7 @@ class JSXTaskSpec extends Specification {
 		JSXTask task = project.tasks.jsx
 		task.sourcesDir == project.file('src/react')
 		task.destDir == project.file('out')
-		task.options.extension == 'jsx'
+		task.jsxOptions.extension == 'jsx'
   }
 
 
